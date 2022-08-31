@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<title>Stefano Vazzoler</title>
+<meta name="Description" content="Stefano Vazzoler's Personal Website.">
+{% endblock extra_head %}
+{% block content %}
+<div class="navbar">
+    <div>
+        <span class="brand fls">Stefano Vazzoler</span>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#blog">Blog Posts</a>
+        </nav>
+    </div>
+</div>
+<main>
+    <section id="about">
+        <p>
+            Hi, I'm Stefano - a <b>Software Engineer</b> currently working with the Cloud Security team at <b>Cisco</b>.<br>
+            On my free time I like ⛷️ skiing, 🥾 hiking, 🧳 traveling, and 👨‍💻 working on open source personal projects.<br>
+            Talk with me about distributed systems, cloud computing, networking, and security.
+        </p>
+        <p>
+            Find me on <a href="https://github.com/stefanovazzocell/" target="_blank">Github</a>,
+            <a href="https://www.linkedin.com/in/stefanovazzoler/" target="_blank" rel="noreferrer">Linkedin</a>,
+            <a rel="me" href="https://mastodon.social/@svazzoler" target="_blank">Mastodon</a>
+            <!--sse-->or reach out via email at <b>hi</b> <i>@</i> <b>stefanovazzoler.com</b><!--/sse-->!
+        </p>
+    </section>
+    <section id="blog">
+        <h1>Blog Posts</h1>
+        <div class="cards">
+            {% for page in section.pages %}
+            <div>
+                <div>
+                    <b class="title">{{ page.title }}</b><br>
+                    <small>{{ page.reading_time }} minute read</small>
+                </div>
+                <div>
+                    {% if page.summary %}
+                    <p>{{ page.summary | safe }}</p>
+                    {%endif%}
+                </div>
+                <div><a href="{{ page.permalink | safe }}" class="btn">Read More</a></div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="cards">
+            <div>
+                <b class="title">Rocket</b>
+                <div>
+                    <p>Share <a href="https://stefanovazzocell.github.io/R3/docs/encryption" target="_blank">encrypted</a> links, text, and small files with friends and family.</p>
+                    <p>HTML/CSS/JS front-end with no external libraries or dependencies, Go backend using Redis to store data, and a Go cli utility.</p>
+                </div>
+                <div>
+                    <a class="btn" href="https://rkt.one/" target="_blank">Site</a>
+                    <a class="btn" href="https://github.com/stefanovazzocell/R3" target="_blank">Github</a>
+                </div>
+            </div>
+            <div>
+                <b class="title">GoDecimal</b>
+                <div>
+                    <p>A Go library to parse and perform basic arithmetic operation while working with decimal numbers.</p>
+                    <p>Particularly useful when trying to do calculations involving money.</p>
+                </div>
+                <div>
+                    <a class="btn" href="https://github.com/stefanovazzocell/GoDecimal" target="_blank">Github</a>
+                </div>
+            </div>
+            <div class="wide">
+                <b class="title">Home Lab</b>
+                <div>
+                    <p>Here's a non-exhaustive list of services I run at home:</p>
+                    <ul>
+                        <li><b>Docker</b>: run/host my sites and projects.</li>
+                        <li><b><a href="https://github.com/home-assistant/" target="_blank">Home Assistant</a></b>: monitor my home, automate lights, and control speakers.</li>
+                        <li><b><a href="https://github.com/AdguardTeam/AdGuardHome" target="_blank">AdGuard Home</a></b>: DNS server to block malware, tracking, and ads.</li>
+                    </ul>
+                    <p>
+                        Furthermore I practice a proper 3-2-1 backup strategy with both offline and offsite encrypted backups.<br>
+                        I also try to implement proper network security with a strict firewall policy, DNS request filtering/monitoring, canary files/devices across my network, and more.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <b class="title">Toy Language</b>
+                <div>
+                    <p>A simple toy language interpreter written in Go.</p>
+                    <p>Expands the base language with TCP networking functionality.</p>
+                </div>
+                <div>
+                    <a class="btn" href="https://github.com/stefanovazzocell/ToyLanguage" target="_blank">Github</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <a href="/rss.xml">RSS Feed</a> <a href="https://github.com/stefanovazzocell/site">GitHub</a>
+    </footer>
+</main>
+{% endblock content %}

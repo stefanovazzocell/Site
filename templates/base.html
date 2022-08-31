@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f77">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f77">
+    <a rel="me" href="https://mastodon.social/@svazzoler">Mastodon</a>
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ico/32.png">
+    {% block extra_head %}{% endblock extra_head %}
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+    {% if config.generate_feed %}<link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">{% endif %}
+    {% block css %}<link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) | safe }}">{% endblock css %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
