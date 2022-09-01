@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block extra_head %}
+{% if page.description %}
+<title>{{ page.title }} - Stefano Vazzoler</title>
+<meta name="Description" content="{{ page.description }}">
+{% endif %}
+{% endblock extra_head %}
+{% block content %}
+<div class="navbar">
+    <div>
+        <a href="/" class="brand">Stefano Vazzoler</a>
+    </div>
+</div>
+<header><h1>{{ page.title }}</h1></header>
+<article>
+    {{ page.content | safe }}
+</article>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block extra_head %}
+<title>404 - Stefano Vazzoler</title>
+<meta http-equiv="Refresh" content="30; url='/'" />
+{% endblock extra_head %}
+{% block content %}
+<div class="navbar">
+    <div>
+        <a href="/" class="brand">Stefano Vazzoler</a>
+    </div>
+</div>
+<header><h1>Page not found</h1></header>
+<article>
+    <div>
+        <a href="https://xkcd.com/1024" target="_blank">
+            <p>xkcd #1024</p>
+            <img src="https://imgs.xkcd.com/comics/error_code.png" alt="It has a section on motherboard beep codes that lists, for each beep pattern, a song that syncs up well with it.">
+        </a>
+    </div>
+    <p>You'll be redirected to the homepage in 30 seconds...</p>
+</article>
+{% endblock content %}
