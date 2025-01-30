@@ -21,7 +21,7 @@ main > section, .navbar > div, header, article, footer {
 }
 
 article {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 /* Navigation Bar */
@@ -167,6 +167,9 @@ td {
 }
 th {
     padding: 10px 15px;
+}
+hr {
+    margin-top: 60px;
 }
 
 /* Media Queries */
